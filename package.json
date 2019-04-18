@@ -1,0 +1,19 @@
+{
+  "name": "satejs",
+  "version": "1.0.0",
+  "description": "This is a part of the assessment for Tantrum Street",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TantrumStreet/satejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TantrumStreet/satejs/issues"
+  },
+  "homepage": "https://github.com/TantrumStreet/satejs#readme"
+}

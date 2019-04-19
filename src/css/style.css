@@ -1,0 +1,19 @@
+.text-center {
+    text-align: center
+}
+
+ .bg-search{
+    background-color: #a9d2e2;
+}
+
+.bg-list{
+    background-color: #20b2aa;
+}
+
+.bg-detailed{
+    background-color: #1d3b33;
+} 
+
+.search-bar > input{
+    width: 30%
+}

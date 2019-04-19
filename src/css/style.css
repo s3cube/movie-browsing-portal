@@ -3,15 +3,17 @@
 }
 
  .bg-search{
-    background-color: #a9d2e2;
+    background-color: #f15946;
 }
 
 .bg-list{
-    background-color: #20b2aa;
+    background-color: #53b3cb;
 }
 
 .bg-detailed{
-    background-color: #1d3b33;
+    background-color: #f9c22e;
+    background-size: 100%;
+    background-repeat: no-repeat;
 } 
 
 .search-bar > input{
@@ -22,6 +24,19 @@
     height: 90vh;
 }
 
+.detailed-hero{
+    height: 50%;
+    width: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(18, 18, 18, 0.7);
+    position: relative;
+}
 .search-bar{
     height: 10vh;
 }
@@ -32,9 +47,36 @@
 
 .list-view{
     overflow-y: scroll;
-    
+    cursor: pointer;
 }
 
 .card-view{
     border-bottom: 1px solid #e4e4e4
+}
+
+.hero-content{
+    bottom: 0;
+    position: absolute;
+    left: 25px;
+    width: 100%;
+}
+
+.hero-content img{
+    width: 150px;
+    position: absolute;
+    bottom: -50px;
+}
+.hero-title{
+    left: 160px;
+    position: absolute;
+    top: -150px;
+    color: white;
+}
+
+.hero-title h2,.hero-title span{
+    color: white;
+}
+
+.top-30{
+    padding-top:30px;
 }

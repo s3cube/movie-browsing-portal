@@ -5,13 +5,8 @@ export default class ListView extends Component {
    
     constructor(props){
         super(props);
-        // this.handleCardClick = this.handleCardClick.bind(this);
     }
 
-    // handleCardClick(movie){
-    //     console.log("Card click at list view")
-    //     this.props.handleCardClick(movie);
-    // }
 
     render(){
         const listOfMovies = this.props.movies.map((movie)=>{

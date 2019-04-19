@@ -22,9 +22,9 @@ export default class DetailedView extends Component {
                                         <img src={"https://image.tmdb.org/t/p/w500"+movie.poster_path}/>
                                         <div className="hero-title">
                                             <h2>{movie.title}</h2>
-                                            <span>{movie.original_language}</span>|
-                                            <span>{movie.popularity}</span>|
-                                            <span>{movie.vote_average}</span>
+                                            <span className="language">{movie.original_language}</span>|
+                                            <span className="popularity">{movie.popularity}</span>|
+                                            <span className="votes">{movie.vote_average}</span>
 
                                         </div>
                                     </div>

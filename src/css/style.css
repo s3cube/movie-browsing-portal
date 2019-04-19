@@ -2,16 +2,20 @@
     text-align: center
 }
 
+.container {
+    background: #121212
+}
+
  .bg-search{
-    background-color: #f15946;
+    background-color: #121212;
 }
 
 .bg-list{
-    background-color: #53b3cb;
+    background-color: #121212;
 }
 
 .bg-detailed{
-    background-color: #f9c22e;
+    background-color: #121212;
     background-size: 100%;
     background-repeat: no-repeat;
 } 
@@ -20,8 +24,12 @@
     width: 30%
 } */
 
+.card-view{
+    color: #ffffff
+}
 .list-view, .detailed-view {
     height: 90vh;
+    color: #e4e4e4;
 }
 
 .detailed-hero{
@@ -89,6 +97,7 @@
 }
 .search-input{
     width: 30%;
+    padding: 8px;
     border-radius: 10px;
     box-shadow: 0px 3px 3px 1px gray;
 }

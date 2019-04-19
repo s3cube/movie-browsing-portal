@@ -3,6 +3,14 @@ import SearchBar from '../Searchbar/index';
 import ListView from '../ListView/index';
 import DetailedView from '../DetailedView/index';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGlobe,faFire,faStar,faSearch } from '@fortawesome/free-solid-svg-icons'
+library.add(faGlobe);
+library.add(faFire);
+library.add(faStar);
+library.add(faSearch);
+
 
 export default class App extends Component {
     constructor(props){

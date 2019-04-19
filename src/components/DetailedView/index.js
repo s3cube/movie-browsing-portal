@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default class DetailedView extends Component {
 
@@ -22,10 +23,18 @@ export default class DetailedView extends Component {
                                         <img src={"https://image.tmdb.org/t/p/w500"+movie.poster_path}/>
                                         <div className="hero-title">
                                             <h2>{movie.title}</h2>
-                                            <span className="language">{movie.original_language}</span>|
-                                            <span className="popularity">{movie.popularity}</span>|
-                                            <span className="votes">{movie.vote_average}</span>
-
+                                            <span className="hero-property">
+                                                <span className="faIcon"> <FontAwesomeIcon icon="globe" /> </span> 
+                                                {movie.original_language}
+                                            </span> |
+                                            <span className="hero-property">
+                                                <span className="faIcon"> <FontAwesomeIcon icon="fire" /> </span> 
+                                                {movie.popularity}
+                                            </span> |
+                                            <span className="hero-property">
+                                                <span className="faIcon"> <FontAwesomeIcon icon="star" /> </span> 
+                                                {movie.vote_average}
+                                            </span>
                                         </div>
                                     </div>
                                     : null}

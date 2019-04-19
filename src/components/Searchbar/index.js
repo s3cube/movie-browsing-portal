@@ -38,7 +38,7 @@ export default class SearchBar extends Component {
         return(
             <div className="row bg-search text-center search-bar">
                 <div className="search-bar">
-                    <input placeholder="Search for Movies" onChange={this.queryAPI} className="search-input" type = "text"></input>
+                    <input placeholder="Search for Movies" onChange={this.queryAPI} className="search-input" type = "text"/>
                     {/* <button>Search</button> */}
                 </div>
             </div>

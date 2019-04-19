@@ -25,3 +25,16 @@
 .search-bar{
     height: 10vh;
 }
+
+.card-img{
+    width: 100%;
+}
+
+.list-view{
+    overflow-y: scroll;
+    
+}
+
+.card-view{
+    border-bottom: 1px solid #e4e4e4
+}

@@ -37,10 +37,10 @@ export default class App extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-3">
-                        <ListView/>
+                    <div className="col-4">
+                        <ListView movies={this.state.movies} />
                     </div>
-                    <div className="col-9">
+                    <div className="col-8">
                         <DetailedView/>
                     </div>
                 </div>

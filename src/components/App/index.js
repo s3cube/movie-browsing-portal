@@ -7,8 +7,12 @@ import DetailedView from '../DetailedView/index';
 export default class App extends Component {
     constructor(props){
         super(props)
+
+        this.handleCardClick =this.handleCardClick.bind(this);
+
         this.state = {
-            movies : []
+            movies : [],
+            selectedCard : {}
         }
     } 
     componentDidMount(){
@@ -26,6 +30,12 @@ export default class App extends Component {
             }
         )
     }
+
+    handleCardClick(movie){
+        this.setState({
+            selectedCard:movie
+        })
+    }
    
 
     render(){
@@ -38,10 +48,10 @@ export default class App extends Component {
                 </div>
                 <div className="row">
                     <div className="col-4">
-                        <ListView movies={this.state.movies} />
+                        <ListView handleCardClick={this.handleCardClick} movies={this.state.movies} />
                     </div>
                     <div className="col-8">
-                        <DetailedView/>
+                        <DetailedView selectedCard={this.state.selectedCard} />
                     </div>
                 </div>
             </div>

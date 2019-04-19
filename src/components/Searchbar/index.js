@@ -7,7 +7,7 @@ export default class SearchBar extends Component {
             <div className="row bg-search text-center search-bar">
                 <div className="search-bar">
                     <input type = "text"></input>
-                    <button>Click kar bhai</button>
+                    <button>Search</button>
                 </div>
             </div>
         )

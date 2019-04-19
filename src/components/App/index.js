@@ -9,10 +9,14 @@ export default class App extends Component {
         super(props)
 
         this.handleCardClick =this.handleCardClick.bind(this);
+        this.updateMovieList = this.updateMovieList.bind(this);
 
         this.state = {
             movies : [],
-            selectedCard : {}
+            defaultMovies:[],
+            selectedCard : {},
+            active :false,
+            movieInfo:{}
         }
     } 
     componentDidMount(){
@@ -22,7 +26,8 @@ export default class App extends Component {
             (result) =>{
                 console.log(result);
                 this.setState({
-                    movies : result.results
+                    movies : result.results,
+                    defaultMovies:result.results
                 })
             },
             (error)=>{
@@ -31,10 +36,42 @@ export default class App extends Component {
         )
     }
 
+    loadCardInformation(){
+        
+        
+    }
+
+    updateMovieList(movie_list){
+        if(movie_list.length != 0){
+            this.setState({
+                movies:movie_list
+            })
+        }else{
+            this.setState({
+                movies:this.state.defaultMovies
+            })
+        }
+      
+    }
+
+
     handleCardClick(movie){
-        this.setState({
-            selectedCard:movie
-        })
+
+        console.log(movie);
+        fetch("https://api.themoviedb.org/3/movie/"+ movie+"?api_key=a12d64a929a0fed4d20b1778399123d7")
+        .then(movie_info=> movie_info.json())
+        .then(
+            (result) =>{
+                console.log("Got clicked",result);
+                this.setState({
+                    movieInfo : result,
+                    active:true
+                })
+            },
+            (error)=>{
+                console.log("FAILED",error);
+            }
+        )
     }
    
 
@@ -43,7 +80,7 @@ export default class App extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <SearchBar/>
+                        <SearchBar updateMovieList = {this.updateMovieList}/>
                     </div>
                 </div>
                 <div className="row">
@@ -51,7 +88,7 @@ export default class App extends Component {
                         <ListView handleCardClick={this.handleCardClick} movies={this.state.movies} />
                     </div>
                     <div className="col-8">
-                        <DetailedView selectedCard={this.state.selectedCard} />
+                        <DetailedView active={this.state.active} movieInfo={this.state.movieInfo} />
                     </div>
                 </div>
             </div>

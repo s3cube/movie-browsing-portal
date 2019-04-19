@@ -17,3 +17,11 @@
 .search-bar > input{
     width: 30%
 }
+
+.list-view, .detailed-view {
+    height: 90vh;
+}
+
+.search-bar{
+    height: 10vh;
+}

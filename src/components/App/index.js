@@ -86,19 +86,15 @@ export default class App extends Component {
     render(){
         return(
             <div className="container">
-                <div className="row">
-                    <div className="col-12">
+                    <div className="search">
                         <SearchBar updateMovieList = {this.updateMovieList}/>
                     </div>
-                </div>
-                <div className="row">
-                    <div className="col-4">
+                    <div className="list">
                         <ListView handleCardClick={this.handleCardClick} movies={this.state.movies} />
                     </div>
-                    <div className="col-8">
+                    <div className="detailed">
                         <DetailedView active={this.state.active} movieInfo={this.state.movieInfo} />
                     </div>
-                </div>
             </div>
         )
     }

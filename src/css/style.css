@@ -51,11 +51,13 @@
 
 .card-img{
     width: 100%;
+    /* text-align: center; */
 }
 
 .list-view{
     overflow-y: scroll;
     cursor: pointer;
+    border-right: 1px solid gray;
 }
 
 .card-view{
@@ -65,7 +67,7 @@
 .hero-content{
     bottom: 0;
     position: absolute;
-    left: 25px;
+    /* left: 25px; */
     width: 100%;
 }
 
@@ -73,9 +75,10 @@
     width: 150px;
     position: absolute;
     bottom: -50px;
+    left: 30px
 }
 .hero-title{
-    left: 160px;
+    left: 200px;
     position: absolute;
     top: -150px;
     color: white;
@@ -94,6 +97,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    border-bottom: 1px solid gray;
 }
 .search-input{
     width: 30%;
@@ -105,3 +109,10 @@
     font-size: 14px;
 }
 
+.pd-top-10{
+    padding-top: 10%;
+}
+
+.pd-left-5{
+    padding-left:5%;
+}

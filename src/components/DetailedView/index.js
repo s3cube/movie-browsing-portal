@@ -20,7 +20,7 @@ export default class DetailedView extends Component {
                                 <div className="hero-content">
                                     {this.props.active == true ? 
                                     <div>
-                                        <img src={"https://image.tmdb.org/t/p/w500"+movie.poster_path}/>
+                                        <img src={"https://image.tmdb.org/t/p/w200"+movie.poster_path}/>
                                         <div className="hero-title">
                                             <h2>{movie.title}</h2>
                                             <span className="hero-property">
@@ -41,7 +41,8 @@ export default class DetailedView extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="row top-30">
+                        <div className="row pd-top-10 pd-left-5">
+                            <h3>Overview:</h3>
                             <p>{movie.overview}</p>
                         </div>
                         

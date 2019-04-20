@@ -2,14 +2,16 @@ import React, {Component} from "react";
 import SearchBar from '../Searchbar/index';
 import ListView from '../ListView/index';
 import DetailedView from '../DetailedView/index';
-
+import ExperimentView from '../ExperimentView/index';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlobe,faFire,faStar,faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faGlobe,faFire,faStar,faSearch,faCalendar } from '@fortawesome/free-solid-svg-icons'
+import Modal from "../Modal";
 library.add(faGlobe);
 library.add(faFire);
 library.add(faStar);
 library.add(faSearch);
+library.add(faCalendar);
 
 
 export default class App extends Component {
@@ -18,13 +20,16 @@ export default class App extends Component {
 
         this.handleCardClick =this.handleCardClick.bind(this);
         this.updateMovieList = this.updateMovieList.bind(this);
+        this.showDetailed = this.showDetailed.bind(this);
+        this.hideDetailed = this.hideDetailed.bind(this);
 
         this.state = {
             movies : [],
             defaultMovies:[],
             selectedCard : {},
             active :false,
-            movieInfo:{}
+            movieInfo:{},
+            detailedView:false
         }
     } 
     componentDidMount(){
@@ -44,8 +49,19 @@ export default class App extends Component {
         )
     }
 
-    loadCardInformation(){
+    showDetailed(){
         
+        this.setState({
+            detailedView:true
+        });
+        
+    }
+
+    hideDetailed(){
+        
+        this.setState({
+            detailedView:false
+        });
         
     }
 
@@ -73,7 +89,8 @@ export default class App extends Component {
                 console.log("Got clicked",result);
                 this.setState({
                     movieInfo : result,
-                    active:true
+                    active:true,
+                    detailedView:true
                 })
             },
             (error)=>{
@@ -82,19 +99,24 @@ export default class App extends Component {
         )
     }
    
-
     render(){
         return(
             <div className="container">
                     <div className="search">
                         <SearchBar updateMovieList = {this.updateMovieList}/>
                     </div>
-                    <div className="list">
+                    <div className="experiment">
+                        <ExperimentView handleCardClick={this.handleCardClick} movies={this.state.movies}/>
+                    </div>
+                    <div className="detailed-modal">
+                        {/* <Modal show={this.state.detailedView} handleClose={this.hideDetailed} movieInfo={this.state.movieInfo} /> */}
+                        <Modal show={this.state.detailedView} handleClose={this.hideDetailed} movieInfo={this.state.movieInfo} />
+                    </div>
+                    {/* <div className="list">
                         <ListView handleCardClick={this.handleCardClick} movies={this.state.movies} />
                     </div>
                     <div className="detailed">
-                        <DetailedView active={this.state.active} movieInfo={this.state.movieInfo} />
-                    </div>
+                    </div> */}
             </div>
         )
     }

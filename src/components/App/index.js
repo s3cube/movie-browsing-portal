@@ -3,27 +3,18 @@ import SearchBar from '../Searchbar/';
 import ListView from '../ListView/';
 import Modal from "../Modal/";
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlobe,faFire,faStar,faSearch,faCalendar,faTicketAlt,faTimesCircle } from '@fortawesome/free-solid-svg-icons'
-library.add(faGlobe);
-library.add(faFire);
-library.add(faStar);
-library.add(faSearch);
-library.add(faCalendar);
-library.add(faTicketAlt);
-library.add(faTimesCircle);
-
-
+//This is the main Component that includes the key child components
 export default class App extends Component {
     constructor(props){
         super(props)
 
+        //Function binding
         this.handleCardClick =this.handleCardClick.bind(this);
         this.updateMovieList = this.updateMovieList.bind(this);
         this.showDetailed = this.showDetailed.bind(this);
         this.hideDetailed = this.hideDetailed.bind(this);
 
+        //Setting state to be used across the application 
         this.state = {
             movies : [],
             defaultMovies:[],
@@ -33,35 +24,40 @@ export default class App extends Component {
         }
     } 
 
+    //Fetch the popular movies upon launch
     componentDidMount(){
-
         fetch("https://api.themoviedb.org/3/movie/popular?api_key=a12d64a929a0fed4d20b1778399123d7&language=en-US&page=1")
         .then(movie_list=> movie_list.json())
         .then(
             (result) =>{
+                //Populate both, the current list of movies and a default fall-back for the future
                 this.setState({
                     movies : result.results,
                     defaultMovies:result.results
                 })
             },
             (error)=>{
+                //Currently, console any errors to the screen
                 console.log(error);
             }
         )
     }
 
+    //Function to set the detailedView flag to true
     showDetailed(){
         this.setState({
             detailedView:true
         });
     }
 
+    //Function to set the detailedView flag to false
     hideDetailed(){
         this.setState({
             detailedView:false
         });
     }
 
+    //This function updates the movie list after the search bar updates the results
     updateMovieList(movie_list){
         if(movie_list.length != 0){
             this.setState({
@@ -74,6 +70,7 @@ export default class App extends Component {
         } 
     }
 
+    //When the View More is clicked, I hit two APIs in paralle, and set the respective variables
     handleCardClick(movieId){
 
         Promise.all([
@@ -99,6 +96,7 @@ export default class App extends Component {
                     <div className="list">
                         <ListView handleCardClick={this.handleCardClick} movies={this.state.movies}/>
                     </div>
+                    {/* This Modal is hidden by default */}
                     <div className="detailed-modal">
                         <Modal show={this.state.detailedView} handleClose={this.hideDetailed} movieInfo={this.state.selectedMovie} />
                     </div>

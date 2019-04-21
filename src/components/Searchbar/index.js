@@ -1,17 +1,20 @@
 import React, {Component} from "react";
 import PropTypes from 'prop-types'; 
+
+
 export default class SearchBar extends Component {
     
     constructor(props){
         super(props);
         this.state = {
-            query:"",
-            movies : []
+            query:""
         }
+
         this.queryAPI = this.queryAPI.bind(this);
 
     }
     
+    //Trigger the query if one character is present, update the information in the parent
     queryAPI(event){
         var userTyped = event.target.value
         if(userTyped && userTyped.length > 1){

@@ -1,12 +1,13 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-// https://stackoverflow.com/a/16233919/4759033
+// Referenced from https://stackoverflow.com/a/16233919/4759033
 var formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
   });
 
+//Stateless function for handling the detailed view
 const DetailedView = ({movieInfo,cast}) =>  (
             <div className="detailed-view" >
                         <div className="detailed-hero" style={{backgroundImage:`url(https://image.tmdb.org/t/p/original/${movieInfo.backdrop_path})` }}>
@@ -31,12 +32,14 @@ const DetailedView = ({movieInfo,cast}) =>  (
                                     </div>
                                 </div>
                             </div>
+                            {/* Desktop View */}
                             <div className="hide-mobile pd-top-60 pd-left-5">
                                 <h3>Overview:</h3>
                                 <p>{movieInfo.overview}</p>
                                 <h3>Budget:</h3>
                                 <p>{formatter.format(movieInfo.budget)}</p>
                             </div>
+                            {/* Mobile View */}
                             <div className="details-mobile pd-left-5">
                                 <h2>{movieInfo.title}</h2>
                                 <span className="hero-property">

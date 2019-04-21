@@ -134,9 +134,8 @@ body {
     z-index: 99; 
     top: -5px;
     right: -5px;
+    font-size: 30px;
 }
-
-
 
 .modal {
     position: fixed;

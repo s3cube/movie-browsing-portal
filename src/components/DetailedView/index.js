@@ -18,7 +18,7 @@ export default class DetailedView extends Component {
                         <div className="row detailed-hero" style={{backgroundImage:`url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})` }}>
                             <div className="hero-overlay">
                                     <div className="hero-content">
-                                        
+    
                                         <div>
                                             <img className="hero-poster" src={"https://image.tmdb.org/t/p/w200"+movie.poster_path}/>
                                             <div className="hero-title">

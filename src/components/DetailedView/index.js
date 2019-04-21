@@ -17,15 +17,21 @@ const DetailedView = ({movieInfo,cast}) =>  (
                                             <div className="hero-title hide-mobile">
                                                 <h2>{movieInfo.title}</h2>
                                                 <span className="hero-property">
-                                                    <span className="faIcon"> <FontAwesomeIcon icon="globe" /> </span> 
+                                                    <span className="faIcon"> 
+                                                        <FontAwesomeIcon icon="globe" />
+                                                     </span> 
                                                     {movieInfo.original_language}
                                                 </span> |
                                                 <span className="hero-property">
-                                                    <span className="faIcon"> <FontAwesomeIcon className="red" icon="fire" /> </span> 
+                                                    <span className="faIcon"> 
+                                                        <FontAwesomeIcon className="red" icon="fire" /> 
+                                                    </span> 
                                                     {movieInfo.popularity}
                                                 </span> |
                                                 <span className="hero-property">
-                                                    <span className="faIcon"> <FontAwesomeIcon className="yellow" icon="star" /> </span> 
+                                                    <span className="faIcon"> 
+                                                        <FontAwesomeIcon className="yellow" icon="star" />
+                                                     </span> 
                                                     {movieInfo.vote_average}
                                                 </span>
                                             </div>                            
@@ -43,17 +49,23 @@ const DetailedView = ({movieInfo,cast}) =>  (
                             <div className="details-mobile pd-left-5">
                                 <h2>{movieInfo.title}</h2>
                                 <span className="hero-property">
-                                                    <span className="faIcon"> <FontAwesomeIcon icon="globe" /> </span> 
+                                                    <span className="faIcon">
+                                                        <FontAwesomeIcon icon="globe" /> 
+                                                    </span> 
                                                     {movieInfo.original_language}
-                                                </span> |
+                                </span> |
                                                 <span className="hero-property">
-                                                    <span className="faIcon"> <FontAwesomeIcon className="red" icon="fire" /> </span> 
+                                                    <span className="faIcon"> 
+                                                        <FontAwesomeIcon className="red" icon="fire" /> 
+                                                    </span> 
                                                     {movieInfo.popularity}
                                                 </span> |
                                                 <span className="hero-property">
-                                                    <span className="faIcon"> <FontAwesomeIcon className="yellow" icon="star" /> </span> 
+                                                    <span className="faIcon">
+                                                         <FontAwesomeIcon className="yellow" icon="star" />
+                                                     </span> 
                                                     {movieInfo.vote_average}
-                                </span>
+                                                </span>
                                 <h3>Overview:</h3>
                                 <p>{movieInfo.overview}</p>
                                 <h3>Budget:</h3>

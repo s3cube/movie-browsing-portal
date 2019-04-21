@@ -13,6 +13,7 @@ export default class App extends Component {
         this.updateMovieList = this.updateMovieList.bind(this);
         this.showDetailed = this.showDetailed.bind(this);
         this.hideDetailed = this.hideDetailed.bind(this);
+        this.sideClickHandle = this.sideClickHandle.bind(this);
 
         //Setting state to be used across the application 
         this.state = {
@@ -86,10 +87,14 @@ export default class App extends Component {
             console.log(err);
         })
     }
+
+    sideClickHandle(e){
+        console.log("Side click while open")
+    }
    
     render(){
         return(
-            <div className="container">
+            <div className="container" className={this.state.detailedView ? "container fixed" : "container relative"}>
                     <div className="search">
                         <SearchBar updateMovieList = {this.updateMovieList}/>
                     </div>
@@ -98,7 +103,7 @@ export default class App extends Component {
                     </div>
                     {/* This Modal is hidden by default */}
                     <div className="detailed-modal">
-                        <Modal show={this.state.detailedView} handleClose={this.hideDetailed} movieInfo={this.state.selectedMovie} />
+                        <Modal sideClickHandle={this.sideClickHandle} show={this.state.detailedView} handleClose={this.hideDetailed} movieInfo={this.state.selectedMovie} />
                     </div>
             </div>
         )

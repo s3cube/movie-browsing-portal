@@ -41,6 +41,14 @@ body {
     text-align: center
 }
 
+.fixed{
+    position: fixed;
+}
+
+.normal{
+    position: relative;
+}
+
 /* Main CSS */
 
 /* Default Desktop View */

@@ -81,17 +81,12 @@ body {
   
 /* Card Classes */
 
-.cardcopy-img{
-    width: 100%;
-    text-align: center
-}
-.cardcopy-poster{
+.card-poster{
     width:80%;
     margin: auto;
 }
 
-
-.cardcopy-poster{
+.card-poster{
     position: relative;
     box-shadow:1px 1px 20px 10px black
 }
@@ -111,7 +106,7 @@ body {
     text-align: center;
 }
 
-.cardcopy-poster:hover .card-overlay{
+.card-poster:hover .card-overlay{
     opacity: 0.95
 }
 

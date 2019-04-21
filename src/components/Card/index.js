@@ -10,11 +10,13 @@ export default class Card extends Component {
         this.truncateText = this.truncateText.bind(this);
     }
 
+    //Used to intercept the click, prevent default and send the necessary information to the parent
     handleLocalClick(e){
         e.preventDefault();
         this.props.handleCardClick(this.props.movie.id);
     }
 
+    // Used this function to truncate text visible on hover
     truncateText(description){
         if(description.length > 120){
             var length = 3;
@@ -26,9 +28,9 @@ export default class Card extends Component {
 
     render(){
         return(
-            <div className="bg-card cardcopy-view" >
-                    <div className="cardcopy-poster">
-                        <img className ="cardcopy-img" src={"https://image.tmdb.org/t/p/w300"+this.props.movie.poster_path}/>
+            <div>
+                    <div className="card-poster">
+                        <img className ="card-img" src={"https://image.tmdb.org/t/p/w300"+this.props.movie.poster_path}/>
                         <div className="card-overlay" >
                                 <div className="card-info">
                                     <h2>{this.props.movie.title}</h2>

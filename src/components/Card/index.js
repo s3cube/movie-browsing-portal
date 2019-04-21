@@ -17,7 +17,6 @@ export default class Card extends Component {
     render(){
         return(
             <div className="row bg-card card-view" onClick={this.handleLocalClick}>
-             
                     <div className="col-4 card-poster">
                         <img className ="card-img" src={"https://image.tmdb.org/t/p/w300"+this.props.movie.poster_path}/>
                     </div>

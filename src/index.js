@@ -1,11 +1,10 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import '../src/css/style.css';
-// import '../src/css/simple-grid.css';
 import '../src/css/custom-grid.css';
+import App from './components/App'
 
-import App from './components/App/index'
-export default class HelloWorld extends Component{
+export default class MoviesApp extends Component{
     render(){
         return(
             <App/>
@@ -13,4 +12,4 @@ export default class HelloWorld extends Component{
     }
 }
 
-ReactDOM.render(<HelloWorld/>,document.getElementById("app"));
+ReactDOM.render(<MoviesApp/>,document.getElementById("app"));

@@ -33,10 +33,8 @@ export default class SearchBar extends Component {
     
     render(){
         return(
-            <div className="row bg-search text-center search-bar">
-                <div className="search-bar">
+            <div className="text-center search-bar">
                     <input placeholder="Search for Movies" onChange={this.queryAPI} className="search-input" type = "text"/>
-                </div>
             </div>
         )
     }

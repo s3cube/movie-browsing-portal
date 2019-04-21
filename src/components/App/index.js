@@ -96,7 +96,7 @@ export default class App extends Component {
                     <div className="search">
                         <SearchBar updateMovieList = {this.updateMovieList}/>
                     </div>
-                    <div className="experiment">
+                    <div className="list">
                         <ListView handleCardClick={this.handleCardClick} movies={this.state.movies}/>
                     </div>
                     <div className="detailed-modal">

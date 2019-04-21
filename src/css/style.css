@@ -255,9 +255,10 @@ body {
 }
 
 
-  .yellow{
+.yellow{
       color:  yellow;
-  }
+}
+
 .red{
     color: red;
 }
@@ -267,6 +268,10 @@ body {
     .experiment-view{
         display: flex;
         padding-top: 30px;
+    }
+
+    .overlay-button:hover,.overlay-button:active{
+        background: grey;
     }
 
     .hero-poster,.hide-mobile {
@@ -330,6 +335,9 @@ body {
 
 @media only screen and (min-width:900px){
 
+    .overlay-button:hover{
+        background: grey;
+    }
     .search-input{
         width: 40%;
     }

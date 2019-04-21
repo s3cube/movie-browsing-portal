@@ -100,7 +100,7 @@ export default class App extends Component {
                         <ListView handleCardClick={this.handleCardClick} movies={this.state.movies}/>
                     </div>
                     <div className="detailed-modal">
-                        <Modal show={this.state.detailedView} handleClose={this.hideDetailed} movieInfo={this.state.selectedMovie} cast={this.state.selectedMovieCast}/>
+                        <Modal show={this.state.detailedView} handleClose={this.hideDetailed} movieInfo={this.state.selectedMovie} />
                     </div>
             </div>
         )

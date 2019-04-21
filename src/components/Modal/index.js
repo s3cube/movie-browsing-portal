@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import DetailedView from "../DetailedView";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types';
 
 export default class Modal extends Component {
 
@@ -17,9 +18,16 @@ export default class Modal extends Component {
             <div className={this.state.showHideClassName}>
               <section className="modal-main">
                     <FontAwesomeIcon icon="times-circle" className="close-modal" onClick={this.props.handleClose} /> 
-                    <DetailedView movieInfo={this.props.movieInfo} cast={this.props.cast} />
+                    <DetailedView movieInfo={this.props.movieInfo} />
               </section>
             </div>
           );
     }
+}
+
+Modal.propTypes = {
+    movieInfo:PropTypes.object,
+    cast:PropTypes.object,
+    handleClose:PropTypes.func,
+    show:PropTypes.bool
 }

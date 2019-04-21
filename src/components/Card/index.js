@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types';
 
 export default class Card extends Component {
 
@@ -44,4 +45,9 @@ export default class Card extends Component {
             </div>
         )
     }
+}
+
+Card.propTypes = {
+    movie:PropTypes.object,
+    handleCardClick:PropTypes.func
 }

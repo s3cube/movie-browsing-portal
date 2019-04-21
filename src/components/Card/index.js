@@ -25,11 +25,11 @@ export default class Card extends Component {
 
     render(){
         return(
-            <div className="row bg-card cardcopy-view" onClick={this.handleLocalClick}>
+            <div className="row bg-card cardcopy-view" >
                     <div className="col-4 cardcopy-poster">
                        
                         <img className ="cardcopy-img" src={"https://image.tmdb.org/t/p/w300"+this.props.movie.poster_path}/>
-                        <div className="card-overlay">
+                        <div className="card-overlay" >
                                 <div className="col-8 card-info">
                                     <h2>{this.props.movie.title}</h2>
                                     <p><FontAwesomeIcon icon="star" className="yellow" /> {this.props.movie.vote_average}</p>
@@ -38,7 +38,7 @@ export default class Card extends Component {
                                 <div className="col-12 card-overview">
                                    {this.truncateText(this.props.movie.overview)}
                                 </div>
-                                <button className="overlay-button">View More</button>
+                                <button className="overlay-button" onClick={this.handleLocalClick}>View More</button>
                         </div>
                     </div>
             </div>

@@ -47,7 +47,7 @@ body {
 .container {
     display: grid;
     min-height: 100%;
-    grid-template-rows:15% 6fr;
+    grid-template-rows:100px 2fr;
     grid-template-columns: 1fr;
     grid-template-areas: "search"
                          "list";
@@ -57,6 +57,7 @@ body {
 
 .search{
     grid-area:search;
+    padding: 20px;
 }
 
 .list{
@@ -172,9 +173,11 @@ body {
 
 /* List View */
 
-.list-view{
-    height: 90vh;
-    overflow-y: scroll;
+.experiment-view{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 20px;
 }
 
 
@@ -222,16 +225,12 @@ body {
 
 /* Search Bar Classes */
 .search-bar{
-    height: 10vh;
-}
-
-.search-bar{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    /* border-bottom: 1px solid gray; */
 }
+
 .search-input{
     width: 30%;
     padding: 8px;
@@ -264,7 +263,6 @@ body {
 @media only screen and (min-width:300px){
 
     .experiment-view{
-        grid-area: experiment;
         display: flex;
         padding-top: 30px;
     }
@@ -285,28 +283,19 @@ body {
    
 }
 
-.experiment-view{
-    grid-area: experiment;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding-top: 20px;
-}
 
 @media only screen and (min-width:600px){
 
-   
     .hero-poster{
         display: block;
     }
-.hero-content{
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-}
 
-
-
+    .hero-content{
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+    }
+    
     .detailed{
         display: none;
     }
@@ -315,17 +304,6 @@ body {
         width: 60%;
     }
 
-    .experiment-view{
-        grid-area: experiment;
-        display: flex;
-        grid-template-areas: "copycard-view copycard-view copycard-view copycard-view";
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        padding-top: 30px;
-    }
-
-
-   
     .card-overview{
         display: block;
     }
@@ -336,15 +314,6 @@ body {
 
     .search-input{
         width: 40%;
-    }
-
-    .experiment-view{
-        grid-area: experiment;
-        display: flex;
-        grid-template-areas: "copycard-view copycard-view copycard-view copycard-view";
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        padding-top: 30px;
     }
 
     .detailed{

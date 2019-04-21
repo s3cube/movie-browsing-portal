@@ -269,8 +269,12 @@ body {
         padding-top: 30px;
     }
 
-    .hero-poster{
+    .hero-poster,.hide-mobile {
         display: none;
+    }
+
+    .detailed-hero{
+        height: 20%;
     }
 
     .hero-content{
@@ -282,13 +286,21 @@ body {
     .search-input{
         width: 60%;
     }
+
+    .details-mobile{
+        display: block;
+    }
    
 }
 
 
 @media only screen and (min-width:600px){
 
-    .hero-poster{
+    .details-mobile{
+        display: none;
+    }
+
+    .hero-poster,.hide-mobile {
         display: block;
     }
 
@@ -309,6 +321,10 @@ body {
     .card-overview{
         display: block;
     }
+
+    .detailed-hero{
+        height: 50%;
+    }
     
 }
 
@@ -318,7 +334,15 @@ body {
         width: 40%;
     }
 
-    .detailed{
+    .detailed,.hide-mobile {
         display: block;
+    }
+
+    .details-mobile{
+        display: none;
+    }
+
+    .detailed-hero{
+        height: 50%;
     }
 }

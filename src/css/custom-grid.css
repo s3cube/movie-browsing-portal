@@ -296,8 +296,8 @@ body {
     position: fixed;
     right: 0;
     color: white;
-    width: 35px;
+    width: 50px;
     z-index: 99; 
-    top: -25px;
-    right: -20px;
+    top: -5px;
+    right: -5px;
 }

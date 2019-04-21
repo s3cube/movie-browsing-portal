@@ -16,7 +16,7 @@ export default class Modal extends Component {
         return (
             <div className={this.state.showHideClassName}>
               <section className="modal-main">
-                    <FontAwesomeIcon icon="times-circle" class="close-modal" onClick={this.props.handleClose} /> 
+                    <FontAwesomeIcon icon="times-circle" className="close-modal" onClick={this.props.handleClose} /> 
                     <DetailedView movieInfo={this.props.movieInfo} />
               </section>
             </div>

@@ -6,23 +6,7 @@
     background: #121212
 }
 
- .bg-search{
-    background-color: #121212;
-}
 
-.bg-list{
-    background-color: #121212;
-}
-
-.bg-detailed{
-    background-color: #121212;
-    background-size: 100%;
-    background-repeat: no-repeat;
-} 
-
-/* .search-bar > input{
-    width: 30%
-} */
 
 .card-view{
     color: #ffffff

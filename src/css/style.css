@@ -168,7 +168,7 @@ body {
 
 /* List View */
 
-.experiment-view{
+.list-view{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -260,7 +260,7 @@ body {
  
 @media only screen and (min-width:300px){
 
-    .experiment-view{
+    .list-view{
         display: flex;
         padding-top: 30px;
     }

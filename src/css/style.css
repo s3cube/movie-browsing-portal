@@ -242,8 +242,8 @@ body {
 }
 
 /* Padding and Margin Classes */
-.pd-top-10{
-    padding-top: 10%;
+.pd-top-60{
+    padding-top: 60px;
 }
 
 .pd-left-5{
@@ -255,10 +255,13 @@ body {
 }
 
 
-  .yellow{
+.yellow{
       color:  yellow;
-  }
+}
 
+.red{
+    color: red;
+}
  
 @media only screen and (min-width:300px){
 
@@ -267,8 +270,16 @@ body {
         padding-top: 30px;
     }
 
-    .hero-poster{
+    .overlay-button:hover,.overlay-button:active{
+        background: grey;
+    }
+
+    .hero-poster,.hide-mobile {
         display: none;
+    }
+
+    .detailed-hero{
+        height: 20%;
     }
 
     .hero-content{
@@ -280,13 +291,21 @@ body {
     .search-input{
         width: 60%;
     }
+
+    .details-mobile{
+        display: block;
+    }
    
 }
 
 
 @media only screen and (min-width:600px){
 
-    .hero-poster{
+    .details-mobile{
+        display: none;
+    }
+
+    .hero-poster,.hide-mobile {
         display: block;
     }
 
@@ -307,16 +326,31 @@ body {
     .card-overview{
         display: block;
     }
+
+    .detailed-hero{
+        height: 50%;
+    }
     
 }
 
 @media only screen and (min-width:900px){
 
+    .overlay-button:hover{
+        background: grey;
+    }
     .search-input{
         width: 40%;
     }
 
-    .detailed{
+    .detailed,.hide-mobile {
         display: block;
+    }
+
+    .details-mobile{
+        display: none;
+    }
+
+    .detailed-hero{
+        height: 50%;
     }
 }

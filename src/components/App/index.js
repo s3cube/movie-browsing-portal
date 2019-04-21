@@ -27,8 +27,9 @@ export default class App extends Component {
         this.state = {
             movies : [],
             defaultMovies:[],
-            movieInfo:{},
-            detailedView:false
+            selectedMovie:{},
+            selectedMovieCast:{},
+            detailedView:false,
         }
     } 
 
@@ -75,19 +76,18 @@ export default class App extends Component {
 
     handleCardClick(movieId){
 
-        fetch("https://api.themoviedb.org/3/movie/"+ movieId+"?api_key=a12d64a929a0fed4d20b1778399123d7")
-        .then(movie_info=> movie_info.json())
-        .then(
-            (result) =>{
-                this.setState({
-                    movieInfo : result,
-                    detailedView:true
-                })
-            },
-            (error)=>{
-                console.log("FAILED",error);
-            }
-        )
+        Promise.all([
+            fetch("https://api.themoviedb.org/3/movie/"+ movieId+"?api_key=a12d64a929a0fed4d20b1778399123d7").then(movie_info=> movie_info.json()),
+            fetch("https://api.themoviedb.org/3/movie/"+ movieId+"/credits?api_key=a12d64a929a0fed4d20b1778399123d7").then(actor_info=> actor_info.json())
+        ]).then(([movie,credits]) =>{
+            this.setState({
+                selectedMovie : movie,
+                selectedMovieCast:credits.cast,
+                detailedView:true
+            })
+        }).catch((err)=>{
+            console.log(err);
+        })
     }
    
     render(){
@@ -100,7 +100,7 @@ export default class App extends Component {
                         <ListView handleCardClick={this.handleCardClick} movies={this.state.movies}/>
                     </div>
                     <div className="detailed-modal">
-                        <Modal show={this.state.detailedView} handleClose={this.hideDetailed} movieInfo={this.state.movieInfo} />
+                        <Modal show={this.state.detailedView} handleClose={this.hideDetailed} movieInfo={this.state.selectedMovie} />
                     </div>
             </div>
         )

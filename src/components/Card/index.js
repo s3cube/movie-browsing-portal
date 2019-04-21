@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types';
 
 export default class Card extends Component {
 
@@ -15,9 +16,9 @@ export default class Card extends Component {
     }
 
     truncateText(description){
-        if(description.length > 150){
+        if(description.length > 120){
             var length = 3;
-            var myTruncatedString = description.substring(0,150)+'...';
+            var myTruncatedString = description.substring(0,120)+'...';
             return myTruncatedString;
         }
         return description;
@@ -44,4 +45,9 @@ export default class Card extends Component {
             </div>
         )
     }
+}
+
+Card.propTypes = {
+    movie:PropTypes.object,
+    handleCardClick:PropTypes.func
 }

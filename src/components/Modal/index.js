@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import DetailedView from "../DetailedView";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types';
 
 export default class Modal extends Component {
 
@@ -22,4 +23,11 @@ export default class Modal extends Component {
             </div>
           );
     }
+}
+
+Modal.propTypes = {
+    movieInfo:PropTypes.object,
+    cast:PropTypes.object,
+    handleClose:PropTypes.func,
+    show:PropTypes.bool
 }

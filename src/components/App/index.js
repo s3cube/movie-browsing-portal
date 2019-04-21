@@ -5,13 +5,15 @@ import DetailedView from '../DetailedView/index';
 import ExperimentView from '../ExperimentView/index';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlobe,faFire,faStar,faSearch,faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { faGlobe,faFire,faStar,faSearch,faCalendar,faTicketAlt,faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import Modal from "../Modal";
 library.add(faGlobe);
 library.add(faFire);
 library.add(faStar);
 library.add(faSearch);
 library.add(faCalendar);
+library.add(faTicketAlt);
+library.add(faTimesCircle);
 
 
 export default class App extends Component {
@@ -33,7 +35,7 @@ export default class App extends Component {
         }
     } 
     componentDidMount(){
-        fetch("https://810a6fc1-026e-4f03-96ba-506a06e57d98.mock.pstmn.io/data")
+        fetch("https://api.themoviedb.org/3/movie/popular?api_key=a12d64a929a0fed4d20b1778399123d7&language=en-US&page=1")
         .then(movie_list=> movie_list.json())
         .then(
             (result) =>{
@@ -102,6 +104,9 @@ export default class App extends Component {
     render(){
         return(
             <div className="container">
+                    {/* <div className="logo">
+                        <FontAwesomeIcon className="logo-white" icon="ticket-alt" />
+                    </div> */}
                     <div className="search">
                         <SearchBar updateMovieList = {this.updateMovieList}/>
                     </div>

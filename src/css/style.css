@@ -1,89 +1,149 @@
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+
+/* Applying font across the page */
+* {
+    font-family: 'Lato', Helvetica, sans-serif;
+  }
+
+/* CSS Reset */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+  font-size: 100%;
+}
+
+/* Alignment Classes */
+.text-left {
+    text-align: left;
+}
+  
+.text-right {
+    text-align: right;
+}
+  
+.center-align {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+.justify {
+    text-align: justify;
+}
+
 .text-center {
     text-align: center
 }
 
+/* Main CSS */
+
+/* Default Desktop View */
 .container {
+    display: grid;
+    min-height: 100%;
+    grid-template-rows:15% 6fr;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "search search"
+                         "list list";
     background: #121212
+
 }
 
-
-
-.card-view{
-    color: #ffffff
-}
-.list-view, .detailed-view {
-    height: 90vh;
-    color: #e4e4e4;
+.search{
+    grid-area:search;
 }
 
-.experiment-view{
-    height: 90vh;
-    overflow-y: scroll;
+.list{
+    grid-area:list;
 }
-.detailed-hero{
-    height: 50%;
+
+.detailed{
+    grid-area:detailed;
+}
+
+/* Display Classes */
+
+  
+.display-block {
+    display: block;
+  }
+  
+.display-none {
+    display: none;
+}
+  
+/* Card Classes */
+
+.cardcopy-img{
     width: 100%;
-    background-size: 100%;
-    background-repeat: no-repeat;
+    text-align: center
+}
+.cardcopy-poster{
+    width:80%;
+    margin: auto;
 }
 
-.hero-overlay{
-    height: 100%;
-    width: 100%;
-    background-color: rgba(18, 18, 18, 0.7);
+
+.cardcopy-poster{
     position: relative;
+    box-shadow:1px 1px 20px 10px black
 }
-.search-bar{
-    height: 10vh;
+
+.card-overlay{
+    position: absolute;
+    background-color:#373636;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    widows: 100%;
+    transition: .5s ease;
+    opacity: 0;
+    color: white;
+    text-align: center;
 }
+
+.cardcopy-poster:hover .card-overlay{
+    opacity: 0.95
+}
+
 
 .card-img{
     width: 100%;
     text-align: center;
 }
 
-.list-view{
-    overflow-y: scroll;
-    cursor: pointer;
-    border-right: 1px solid gray;
-}
-
 .card-view{
     border-bottom: 1px solid #e4e4e4
 }
 
-.hero-title h2,.hero-title span{
+ .card-overview{
+      padding: 10px;
+      text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: normal;
+  }
+
+
+/* Modal Classes */
+.close-modal{
+    position: fixed;
+    right: 0;
     color: white;
+    width: 50px;
+    z-index: 99; 
+    top: -5px;
+    right: -5px;
 }
 
-.top-30{
-    padding-top:30px;
-}
 
-.search-bar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    /* border-bottom: 1px solid gray; */
-}
-.search-input{
-    width: 30%;
-    padding: 8px;
-    border-radius: 2px;
-    /* box-shadow: 2px 2px 2px 2px gray; */
-    background: #121212;
-    color: white;
-    font-size: 14px;
-}
-
-.pd-top-10{
-    padding-top: 10%;
-}
-
-.pd-left-5{
-    padding-left:5%;
-}
 
 .modal {
     position: fixed;
@@ -103,15 +163,6 @@
     left:50%;
     transform: translate(-50%,-50%);
   }
-  
-  .display-block {
-    display: block;
-  }
-  
-  .display-none {
-    display: none;
-  }
-  
   .overlay-button{
       background: none;
       color: white;
@@ -119,17 +170,244 @@
       width: 50%
   }
 
+
+
+
+/* List View */
+
+.list-view{
+    height: 90vh;
+    overflow-y: scroll;
+}
+
+
+/* Detailed View */
+
+.detailed-view {
+    height: 90vh;
+    color: #e4e4e4;
+}
+
+
+.detailed-hero{
+    height: 50%;
+    width: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(18, 18, 18, 0.7);
+    position: relative;
+}
+
+
+.hero-title h2,.hero-title span{
+    color: white;
+}
+
+/* Search Bar Classes */
+.search-bar{
+    height: 10vh;
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* border-bottom: 1px solid gray; */
+}
+.search-input{
+    width: 30%;
+    padding: 8px;
+    border-radius: 2px;
+    /* box-shadow: 2px 2px 2px 2px gray; */
+    background: #121212;
+    color: white;
+    font-size: 18px;
+}
+
+/* Padding and Margin Classes */
+.pd-top-10{
+    padding-top: 10%;
+}
+
+.pd-left-5{
+    padding-left:5%;
+}
+
+.top-30{
+    padding-top:30px;
+}
+
+
   .yellow{
       color:  yellow;
   }
 
-  .card-overview{
-      padding: 10px;
-      text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: normal;
-  }
+ 
+@media only screen and (min-width:300px){
 
-  .logo-white{
-      color: white;
-  }
+    .experiment-view{
+        grid-area: experiment;
+        display: flex;
+        padding-top: 30px;
+    }
+
+    .hero-poster{
+        display: none;
+    }
+
+    .hero-content{
+        bottom: 0;
+        position: relative;
+        width: 100%;
+    }
+
+    .container {
+        grid-template-rows:1fr 6fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "search"
+                            "experiment";
+    }
+
+    .search-input{
+        width: 60%;
+    }
+
+
+   
+   
+}
+
+.experiment-view{
+    grid-area: experiment;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 20px;
+}
+
+@media only screen and (min-width:600px){
+
+   
+    .hero-poster{
+        display: block;
+    }
+.hero-content{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.hero-content img{
+    width: 150px;
+    position: absolute;
+    bottom: -50px;
+    left: 30px
+}
+.hero-title{
+    left: 200px;
+    position: absolute;
+    top: -150px;
+    color: white;
+}
+
+    .detailed{
+        display: none;
+    }
+
+    .search-input{
+        width: 60%;
+    }
+
+    .experiment-view{
+        grid-area: experiment;
+        display: flex;
+        grid-template-areas: "copycard-view copycard-view copycard-view copycard-view";
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding-top: 30px;
+    }
+
+
+   
+    .card-overview{
+        display: block;
+    }
+    
+}
+
+@media only screen and (min-width:900px){
+
+
+.hero-content{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.hero-content img{
+    width: 150px;
+    position: absolute;
+    bottom: -50px;
+    left: 30px
+}
+.hero-title{
+    left: 200px;
+    position: absolute;
+    top: -150px;
+    color: white;
+}
+
+
+    .search-input{
+        width: 40%;
+    }
+    .experiment-view{
+        grid-area: experiment;
+        display: flex;
+        grid-template-areas: "copycard-view copycard-view copycard-view copycard-view";
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+
+    .container {
+        display: grid;
+        min-height: 100%;
+        grid-template-rows:20% 6fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "search"
+                             "experiment";
+    }
+
+    .card-overview{
+        display: block;
+    }
+
+    .experiment-view{
+        grid-area: experiment;
+        display: flex;
+        grid-template-areas: "copycard-view copycard-view copycard-view copycard-view";
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding-top: 30px;
+    }
+
+    .card-view{
+        display: grid;
+        grid-template-rows:10% 2fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "card-poster"
+                             "card-info";
+    }
+
+    
+    .detailed{
+        display: block;
+    }
+}

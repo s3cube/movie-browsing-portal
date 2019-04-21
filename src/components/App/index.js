@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import SearchBar from '../Searchbar/';
-import ExperimentView from '../ExperimentView/';
+import ListView from '../ListView/';
 import Modal from "../Modal/";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -97,7 +97,7 @@ export default class App extends Component {
                         <SearchBar updateMovieList = {this.updateMovieList}/>
                     </div>
                     <div className="experiment">
-                        <ExperimentView handleCardClick={this.handleCardClick} movies={this.state.movies}/>
+                        <ListView handleCardClick={this.handleCardClick} movies={this.state.movies}/>
                     </div>
                     <div className="detailed-modal">
                         <Modal show={this.state.detailedView} handleClose={this.hideDetailed} movieInfo={this.state.movieInfo} />

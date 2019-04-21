@@ -242,8 +242,8 @@ body {
 }
 
 /* Padding and Margin Classes */
-.pd-top-10{
-    padding-top: 10%;
+.pd-top-60{
+    padding-top: 60px;
 }
 
 .pd-left-5{
@@ -258,7 +258,9 @@ body {
   .yellow{
       color:  yellow;
   }
-
+.red{
+    color: red;
+}
  
 @media only screen and (min-width:300px){
 

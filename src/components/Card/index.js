@@ -15,9 +15,9 @@ export default class Card extends Component {
     }
 
     truncateText(description){
-        if(description.length > 150){
+        if(description.length > 120){
             var length = 3;
-            var myTruncatedString = description.substring(0,150)+'...';
+            var myTruncatedString = description.substring(0,120)+'...';
             return myTruncatedString;
         }
         return description;

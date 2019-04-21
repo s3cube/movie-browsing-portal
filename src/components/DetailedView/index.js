@@ -14,18 +14,18 @@ const DetailedView = ({movieInfo}) =>  (
                                                     {movieInfo.original_language}
                                                 </span> |
                                                 <span className="hero-property">
-                                                    <span className="faIcon"> <FontAwesomeIcon icon="fire" /> </span> 
+                                                    <span className="faIcon"> <FontAwesomeIcon className="red" icon="fire" /> </span> 
                                                     {movieInfo.popularity}
                                                 </span> |
                                                 <span className="hero-property">
-                                                    <span className="faIcon"> <FontAwesomeIcon icon="star" /> </span> 
+                                                    <span className="faIcon"> <FontAwesomeIcon className="yellow" icon="star" /> </span> 
                                                     {movieInfo.vote_average}
                                                 </span>
                                             </div>                            
                                     </div>
                                 </div>
                             </div>
-                            <div className="row pd-top-10 pd-left-5">
+                            <div className="pd-top-60 pd-left-5">
                                 <h3>Overview:</h3>
                                 <p>{movieInfo.overview}</p>
                             </div>

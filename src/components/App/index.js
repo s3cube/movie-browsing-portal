@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import SearchBar from '../Searchbar/';
-import ListView from '../ListView/';
+import ListView from '../ListView/index'
 import Modal from "../Modal/";
 
 //This is the main Component that includes the key child components

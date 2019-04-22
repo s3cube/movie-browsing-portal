@@ -33,6 +33,12 @@ const DetailedView = ({movieInfo,cast}) =>  (
                                                         <FontAwesomeIcon className="yellow" icon="star" />
                                                      </span> 
                                                     {movieInfo.vote_average}
+                                                </span> | 
+                                                <span className="hero-property">
+                                                    <span className="faIcon">
+                                                         <FontAwesomeIcon className="white" icon="clock" />
+                                                     </span> 
+                                                    {movieInfo.runtime} minutes
                                                 </span>
                                             </div>                            
                                     </div>
@@ -42,8 +48,9 @@ const DetailedView = ({movieInfo,cast}) =>  (
                             <div className="hide-mobile pd-top-60 pd-left-5">
                                 <h3>Overview:</h3>
                                 <p>{movieInfo.overview}</p>
-                                <h3>Budget:</h3>
-                                <p>{formatter.format(movieInfo.budget)}</p>
+                                <h3>Revenue:</h3>
+                                <p>{formatter.format(movieInfo.revenue)}</p>
+                                
                             </div>
                             {/* Mobile View */}
                             <div className="details-mobile pd-left-5">
@@ -53,7 +60,7 @@ const DetailedView = ({movieInfo,cast}) =>  (
                                                         <FontAwesomeIcon icon="globe" /> 
                                                     </span> 
                                                     {movieInfo.original_language}
-                                </span> |
+                                                </span> |
                                                 <span className="hero-property">
                                                     <span className="faIcon"> 
                                                         <FontAwesomeIcon className="red" icon="fire" /> 
@@ -68,8 +75,8 @@ const DetailedView = ({movieInfo,cast}) =>  (
                                                 </span>
                                 <h3>Overview:</h3>
                                 <p>{movieInfo.overview}</p>
-                                <h3>Budget:</h3>
-                                <p>{formatter.format(movieInfo.budget)}</p>
+                                <h3>Revenue:</h3>
+                                <p>{formatter.format(movieInfo.revenue)}</p>
                             </div>
             </div>
         );

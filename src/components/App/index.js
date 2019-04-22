@@ -8,12 +8,11 @@ export default class App extends Component {
     constructor(props){
         super(props)
 
-        //Function binding
+        // Function binding
         this.handleCardClick =this.handleCardClick.bind(this);
         this.updateMovieList = this.updateMovieList.bind(this);
         this.showDetailed = this.showDetailed.bind(this);
         this.hideDetailed = this.hideDetailed.bind(this);
-        this.sideClickHandle = this.sideClickHandle.bind(this);
 
         //Setting state to be used across the application 
         this.state = {
@@ -88,10 +87,6 @@ export default class App extends Component {
         })
     }
 
-    sideClickHandle(e){
-        console.log("Side click while open")
-    }
-   
     render(){
         return(
             <div className="container" className={this.state.detailedView ? "container fixed" : "container relative"}>
@@ -103,7 +98,7 @@ export default class App extends Component {
                     </div>
                     {/* This Modal is hidden by default */}
                     <div className="detailed-modal">
-                        <Modal sideClickHandle={this.sideClickHandle} show={this.state.detailedView} handleClose={this.hideDetailed} movieInfo={this.state.selectedMovie} />
+                        <Modal show={this.state.detailedView} handleClose={this.hideDetailed} movieInfo={this.state.selectedMovie} />
                     </div>
             </div>
         )

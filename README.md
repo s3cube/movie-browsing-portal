@@ -1,6 +1,10 @@
-# satejs
+# Movie Browsing Portal
 
-# Deliverables
-1. A short writeup_documentation on what you what you created, what tools_frameworks/architecture you used etc. In short, a concise project report. Be very brief and to the point in your approach.
-2. Instructions to execute the code.
+#Technology Usage
+ - ReactJS
+ - CSS Grids
+ - CSS Flexbox
+ - TheMovieDatabase APIs
 
+### Note
+Please replace the API key with a new API key from TheMovieDatabase

@@ -265,8 +265,47 @@ body {
     color: red;
 }
  
+.search-icon{
+    color:white;
+    position: absolute;
+    right: 30%;
+    padding: 10px;
+}
+
+.ticket-icon{
+    color: white;
+    position: absolute;
+    left: 5%;
+    font-size: 50px;
+}
+
+.paginate{
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+.logo{
+    display: inline-block;
+}
 @media only screen and (min-width:300px){
 
+    .logo{
+        display:none;
+    }
+
+    .ticket-icon{
+        color: white;
+        position: absolute;
+        left: 2%;
+        font-size: 25px;
+    }
+
+    .search-icon{
+  
+        padding: 0px;
+        right: 25%;
+
+    }
     .list-view{
         display: flex;
         padding-top: 30px;
@@ -303,6 +342,24 @@ body {
 
 @media only screen and (min-width:600px){
 
+    .logo{
+        display:none;
+    }
+
+    .ticket-icon{
+        color: white;
+        position: absolute;
+        left: 5%;
+        font-size: 50px;
+    }
+
+    .search-icon{
+        color:white;
+        position: absolute;
+        right: 30%;
+        padding: 10px;
+    }
+
     .details-mobile{
         display: none;
     }
@@ -336,6 +393,24 @@ body {
 }
 
 @media only screen and (min-width:900px){
+
+    .logo{
+        display:inline-block;
+    }
+
+    .ticket-icon{
+        color: white;
+        position: absolute;
+        left: 5%;
+        font-size: 50px;
+    }
+
+    .search-icon{
+        color:white;
+        position: absolute;
+        right: 30%;
+        padding: 10px;
+    }
 
     .overlay-button:hover{
         background: grey;

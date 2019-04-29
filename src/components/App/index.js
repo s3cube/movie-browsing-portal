@@ -74,8 +74,8 @@ export default class App extends Component {
     handleCardClick(movieId){
 
         Promise.all([
-            fetch("https://api.themoviedb.org/3/movie/"+ movieId+"?api_key=a12d64a929a0fed4d20b1778399123d7").then(movie_info=> movie_info.json()),
-            fetch("https://api.themoviedb.org/3/movie/"+ movieId+"/credits?api_key=a12d64a929a0fed4d20b1778399123d7").then(actor_info=> actor_info.json())
+            fetch("https://api.themoviedb.org/3/movie/"+ movieId+"?api_key=##APIKEY##").then(movie_info=> movie_info.json()),
+            fetch("https://api.themoviedb.org/3/movie/"+ movieId+"/credits?api_key=##APIKEY##").then(actor_info=> actor_info.json())
         ]).then(([movie,credits]) =>{
             this.setState({
                 selectedMovie : movie,

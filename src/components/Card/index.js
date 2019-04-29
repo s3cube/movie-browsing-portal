@@ -34,8 +34,12 @@ export default class Card extends Component {
                         <div className="card-overlay" >
                                 <div className="card-info">
                                     <h2>{this.props.movie.title}</h2>
-                                    <p><FontAwesomeIcon icon="star" className="yellow" /> {this.props.movie.vote_average}</p>
+                                    {this.props.movie.vote_average > 0 ? 
+                                     <p><FontAwesomeIcon icon="star" className="yellow" /> {this.props.movie.vote_average}/10</p>
+                                     : null}
+                                    {this.props.movie.release_date != "" ? 
                                     <p><FontAwesomeIcon icon="calendar" /> {this.props.movie.release_date}</p>
+                                    : null}
                                 </div>
                                 <div className="card-overview">
                                    {this.truncateText(this.props.movie.overview)}

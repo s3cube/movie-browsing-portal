@@ -28,12 +28,13 @@ const DetailedView = ({movieInfo,cast}) =>  (
                                                     </span> 
                                                     {movieInfo.popularity}
                                                 </span> |
-                                                <span className="hero-property">
-                                                    <span className="faIcon"> 
-                                                        <FontAwesomeIcon className="yellow" icon="star" />
-                                                     </span> 
-                                                    {movieInfo.vote_average}
-                                                </span> | 
+                                                {movieInfo.vote_average >0  ? <span className="hero-property">
+                                                        <span className="faIcon"> 
+                                                            <FontAwesomeIcon className="yellow" icon="star" />
+                                                        </span> 
+                                                        {movieInfo.vote_average}/10
+                                                    |</span> 
+                                                : <p>Not Enough Ratings</p>}
                                                 <span className="hero-property">
                                                     <span className="faIcon">
                                                          <FontAwesomeIcon className="white" icon="clock" />
@@ -67,12 +68,13 @@ const DetailedView = ({movieInfo,cast}) =>  (
                                                     </span> 
                                                     {movieInfo.popularity}
                                                 </span> |
-                                                <span className="hero-property">
+                                                {movieInfo.vote_average > 0 ? <span className="hero-property">
                                                     <span className="faIcon">
                                                          <FontAwesomeIcon className="yellow" icon="star" />
                                                      </span> 
-                                                    {movieInfo.vote_average}
+                                                    {movieInfo.vote_average} / 10
                                                 </span>
+                                                : <p>Not Enough Ratings</p>}
                                 <h3>Overview:</h3>
                                 <p>{movieInfo.overview}</p>
                                 <h3>Revenue:</h3>
